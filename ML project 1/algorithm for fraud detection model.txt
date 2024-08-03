@@ -1,0 +1,39 @@
+--------------------------------Fraud detection model algorithm------------------------------------------
+Step 1: Data Preprocessing
+
+Load Data: Load the dataset into a pandas dataframe.
+Convert Categorical Variables: Convert the type column to categorical values using the pd.Categorical() function.
+Convert Binary Variables: Convert the isFraud column to binary values (0/1) using the map() function.
+Check for Missing Values: Check for missing values in the dataset using the isnull() function.
+Handle Missing Values: Handle missing values by either dropping them or imputing them with a suitable value.
+
+Step 2: Split Data
+-Split Data: Split the dataset into training (80%) and testing sets (20%) using the train_test_split() function from scikit-learn.
+-Create Training Set: Create a training set that includes the features (step, type, amount, oldbalanceOrg, newbalanceOrg, oldbalanceDest, newbalanceDest) and the target variable (isFraud).
+-Create Testing Set: Create a testing set that includes the features (step, type, amount, oldbalanceOrg, newbalanceOrg, oldbalanceDest, newbalanceDest) and the target variable (isFraud).
+
+Step 3: Train Model
+-Import Random Forest Classifier: Import the Random Forest Classifier from scikit-learn.
+-Create Random Forest Classifier: Create a Random Forest Classifier object with the specified parameters (n_estimators=100, random_state=42).
+-Train Model: Train the Random Forest Classifier model on the training data using the fit() function.
+-Train Model on Features: Train the model on the features (step, type, amount, oldbalanceOrg, newbalanceOrg, oldbalanceDest, newbalanceDest) and the target variable (isFraud).
+
+Step 4: Evaluate Model
+-Make Predictions: Make predictions on the testing data using the predict() function.
+-Evaluate Model: Evaluate the performance of the model on the testing data using metrics such as accuracy, precision, recall, F1 score, and confusion matrix.
+-Calculate Accuracy: Calculate the accuracy of the model using the accuracy_score() function from scikit-learn.
+-Calculate Precision: Calculate the precision of the model using the precision_score() function from scikit-learn.
+-Calculate Recall: Calculate the recall of the model using the recall_score() function from scikit-learn.
+-Calculate F1 Score: Calculate the F1 score of the model using the f1_score() function from scikit-learn.
+-Create Confusion Matrix: Create a confusion matrix using the confusion_matrix() function from scikit-learn.
+
+Step 5: Save Model
+-Import Pickle: Import the pickle module.
+-Save Model: Save the trained model to a file using the dump() function from pickle.
+-Specify File Name: Specify the file name and path where the model will be saved.
+
+Step 6: Make Predictions
+-Load Saved Model: Load the saved model from the file using the load() function from pickle.
+-Make Predictions: Make predictions on new, unseen data using the predict() function.
+-Specify Input Features: Specify the input features (step, type, amount, oldbalanceOrg, newbalanceOrg, oldbalanceDest, newbalanceDest) for the      new data.
+-Get Predicted Output: Get the predicted output ( probability of the transaction being fraudulent) for the new data
